@@ -9,13 +9,12 @@ Use the random module.
 """
 import asyncio
 import random
-import time
 
 
 async def wait_random(max_delay: int = 10) -> float:
     """wait a random a certain amountof time between 0 and max_delay"""
     delay: float = random.uniform(0, max_delay)
-    time.sleep(delay)
+    await asyncio.sleep(delay)
     return delay
 
 print(asyncio.run(wait_random()))
