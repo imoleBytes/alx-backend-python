@@ -10,7 +10,7 @@ that the method returns what it is supposed to.
 Decorate the method with @parameterized.expand to test the function for
 following inputs:
 """
-from typing import (Dict, Tuple, Union)
+from typing import (Mapping, Tuple, Union)
 import unittest
 from parameterized import parameterized
 from utils import access_nested_map
@@ -25,9 +25,9 @@ class TestAccessNestedMap(unittest.TestCase):
     ])
     def test_access_nested_map(
             self,
-            nested_map: Dict,
+            nested_map: Mapping,
             path: Tuple[str],
-            expected: Union[Dict, int]
+            expected: Union[Mapping, int]
             ) -> None:
         """ main tests happens here"""
         self.assertEqual(access_nested_map(nested_map, path), expected)
