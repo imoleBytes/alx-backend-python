@@ -71,11 +71,14 @@ class TestMemoize(unittest.TestCase):
         """Tests `memoize`'s fn."""
 
         class TestClass:
+            """inner class"""
             def a_method(self):
+                """inner method forclass TestClass"""
                 return 42
 
             @memoize
             def a_property(self):
+                """ a property func"""
                 return self.a_method()
         with patch.object(
                 TestClass,
