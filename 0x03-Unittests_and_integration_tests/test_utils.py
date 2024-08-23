@@ -40,6 +40,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map_exception(
             self, nested_map: Mapping,
             path: Tuple, expected: str) -> None:
+        """access_nested_map for exception """
         with self.assertRaises(KeyError, msg=expected):
             access_nested_map(nested_map, path)
 
@@ -64,7 +65,6 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-
     """Tests `memoize` function."""
 
     def test_memoize(self) -> None:
